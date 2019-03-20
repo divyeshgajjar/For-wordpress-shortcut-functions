@@ -1,0 +1,18 @@
+*********************** Start *************************
+
+
+function get_image_url($item,$type){
+  $check = wp_get_attachment_image_src($item,$type);
+  return ($check) ?$check[0] : "";
+}
+
+function post_id_get_fetured_image($id,$size){
+    $list = wp_get_attachment_image_src( get_post_thumbnail_id($id),$size);
+    return ($list) ? $list[0] : "";
+
+}
+
+call Function using postid,and size.
+Ex. post_id_get_fetured_image($post->ID,'medium');
+
+********************** END *******************************
